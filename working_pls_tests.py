@@ -71,10 +71,10 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         string = "Hello World"
         self.assertEqual(True, isinstance(string, str))
 
-        string = ''Hello World''
+        string = 'Hello World'
         self.assertEqual(True, isinstance(string, str))
 
-        string = """Hello World"""
+        string = "Hello World"
         self.assertEqual(True, isinstance(string, str))
 
     def test_escaping_quotes(self):
