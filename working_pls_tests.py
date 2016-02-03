@@ -17,7 +17,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         This is a great place to launch an interpreter and check
          what the tight hand side of the equalities evaluate to.
         """
-        truth = 1
+        truth = True
         self.assertEqual(truth, None is not 0)
         truth = True # This resets the value of truth
         self.assertEqual(truth, None is not False)
@@ -28,19 +28,19 @@ class TestAssignmentTwo_None(unittest.TestCase):
         checker = 'None'
         if checker:
             x = 1
-        self.assertEqual(1,x)
+        self.assertEqual(0,x)
 
     def test_truthiness(self):
         """
         Compare this test to the above.
         """
         x = []  # An empty list
-        y = 1
-        if x:
+        y = 0
+        if not x:
             y = 1
         self.assertEqual(1, y)
 
-        self.assertTrue(x == None)  # Not PEP8 compliant, but commonly used.
+        self.assertFalse(x == None)  # Not PEP8 compliant, but commonly used.
 
         """
         The take away here is that truthiness is not the same as None
@@ -66,16 +66,16 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         string = 'Hello World'
-        self.assertEqual(1, isinstance(string, str))
+        self.assertEqual(True, isinstance(string, str))
 
         string = "Hello World"
-        self.assertEqual(1, isinstance(string, str))
+        self.assertEqual(True, isinstance(string, str))
 
-        string = 'Hello World'
-        self.assertEqual(1, isinstance(string, str))
+        string = ''Hello World''
+        self.assertEqual(True, isinstance(string, str))
 
-        string = "Hello World"
-        self.assertEqual(1, isinstance(string, str))
+        string = """Hello World"""
+        self.assertEqual(True, isinstance(string, str))
 
     def test_escaping_quotes(self):
         """
@@ -111,10 +111,10 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         For these, fix the assertion methods
         """
         cities = '"New York", "Boston", "Chicago", "Dallas", "St. Louis", "Phoenix" '
-        self.assertEqual('Dallas' in cities)
-        self.assertEqual('"Dallas"' in cities)
-        self.assertEqual('ton' in cities)
-        self.assertEqual('", "' in cities)
+        self.assertTrue('Dallas' in cities)
+        self.assertTrue('"Dallas"' in cities)
+        self.assertTrue('ton' in cities)
+        self.assertTrue("\", \"" in cities)
 
     def test_format(self):
         """
@@ -124,11 +124,11 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         s = 'The current index is {}'
-        self.assertEqual(1,isinstance(s, str))
+        self.assertEqual(True,isinstance(s, str))
 
         i = 1
 
-        truth = 'The current index is 1'  # Replace the ____
+        truth = 'The current index is 0'  # Replace the ____
         self.assertEqual(truth, s.format(i))
 
     def test_string_cases(self):
@@ -137,7 +137,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         Python Koans.
         """
         self.assertEqual('Guido', 'guido'.capitalize())
-        self.assertEqual('guido', 'guido'.upper())
+        self.assertEqual('GUIDO', 'guido'.upper())
         self.assertEqual('timbot', 'TimBot'.lower())
         self.assertEqual('Guido Van Rossum', 'guido van rossum'.title())
         self.assertEqual('tOtAlLy AwEsOmE', 'ToTaLlY aWeSoMe'.swapcase())
@@ -156,9 +156,9 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = '{}'
 
         # Check to see what the heck 's' is
-        self.assertEqual(1, isinstance(s, str))
+        self.assertEqual(True, isinstance(s, str))
 
-        rounded_pi = 3.14156
+        rounded_pi = '3.14156'
         self.assertEqual(rounded_pi, s.format(round(pi, 4)))
 
     def test_translation(self):
@@ -177,7 +177,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = 'The quick brown fox jumped over the lazy dog.'
         s.translate(leet)  # Translate the string here
         
-        truth = 'The quick brown fox jumped over the lazy dog'  # Truth is the newly translated string 
+        truth = 'Th3 qu1ck 620wn f0x jum93d 0v32 7h3 142y'  # Truth is the newly translated string 
 
         self.assertEqual(truth, s)
 
