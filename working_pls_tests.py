@@ -28,7 +28,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         checker = 'None'
         if checker:
             x = 1
-        self.assertEqual(0,x)
+        self.assertEqual(1,x)
 
     def test_truthiness(self):
         """
@@ -128,7 +128,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
 
         i = 1
 
-        truth = 'The current index is 0'  # Replace the ____
+        truth = 'The current index is 1'  # Replace the ____
         self.assertEqual(truth, s.format(i))
 
     def test_string_cases(self):
@@ -158,7 +158,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         # Check to see what the heck 's' is
         self.assertEqual(True, isinstance(s, str))
 
-        rounded_pi = '3.14156'
+        rounded_pi = '3.1416'
         self.assertEqual(rounded_pi, s.format(round(pi, 4)))
 
     def test_translation(self):
@@ -177,7 +177,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = 'The quick brown fox jumped over the lazy dog.'
         s.translate(leet)  # Translate the string here
         
-        truth = 'Th3 qu1ck 620wn f0x jum93d 0v32 7h3 142y'  # Truth is the newly translated string 
+        truth = 'The quick brown fox jumped over the lazy dog.'  # Truth is the newly translated string 
 
         self.assertEqual(truth, s)
 
