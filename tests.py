@@ -10,7 +10,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         Think about what 'is' does here.
         """
         truth = ____
-        self.assertEqual(truth, None is None)
+        self.assertEqual(truth, None = None)
 
     def test_none_is_unique(self):
         """
@@ -18,9 +18,9 @@ class TestAssignmentTwo_None(unittest.TestCase):
          what the tight hand side of the equalities evaluate to.
         """
         truth = ____
-        self.assertEqual(truth, None is not 0)
+        self.assertEqual(truth, None != 0)
         truth = ____  # This resets the value of truth
-        self.assertEqual(truth, None is not False)
+        self.assertEqual(truth, None != False)
 
     def test_none_existence(self):
 
