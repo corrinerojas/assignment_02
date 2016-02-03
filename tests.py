@@ -9,7 +9,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         """
         Think about what 'is' does here.
         """
-        truth = ____
+        truth = 1
         self.assertEqual(truth, None = None)
 
     def test_none_is_unique(self):
@@ -17,9 +17,9 @@ class TestAssignmentTwo_None(unittest.TestCase):
         This is a great place to launch an interpreter and check
          what the tight hand side of the equalities evaluate to.
         """
-        truth = ____
+        truth = 1
         self.assertEqual(truth, None != 0)
-        truth = ____  # This resets the value of truth
+        truth = 1 # This resets the value of truth
         self.assertEqual(truth, None != False)
 
     def test_none_existence(self):
@@ -36,7 +36,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         """
         x = []  # An empty list
         y = 0
-        if not x:
+        if x:
             y = 1
         self.assertEqual(0, y)
 
@@ -66,16 +66,16 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         string = 'Hello World'
-        self.assertEqual(____, isinstance(string, str))
+        self.assertEqual(1, isinstance(string, str))
 
         string = "Hello World"
-        self.assertEqual(____, isinstance(string, str))
+        self.assertEqual(0, isinstance(string, str))
 
-        string = '''Hello World'''
-        self.assertEqual(____, isinstance(string, str))
+        string = 'Hello World'
+        self.assertEqual(1, isinstance(string, str))
 
-        string = """Hello World"""
-        self.assertEqual(____, isinstance(string, str))
+        string = "Hello World"
+        self.assertEqual(0, isinstance(string, str))
 
     def test_escaping_quotes(self):
         """
@@ -87,7 +87,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         a = "He said, \"Don't forget to relax a little\""
         b = 'He said, "Don\'t" forget to relax a little'
 
-        self.assertEqual(____, a == b)
+        self.assertEqual(1, a == b)
 
     def test_string_concatenation(self):
         """
@@ -95,10 +95,10 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         See the Zen of Python for which is preferable
         """
         string = "Go" + " Sun Devils"
-        self.assertEqual(____, string)
+        self.assertEqual(1, string)
 
         string = "Go" " Sun Devils"
-        self.assertEqual(____, string)
+        self.assertEqual(0, string)
 
     def test_in(self):
         """
@@ -111,10 +111,10 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         For these, fix the assertion methods
         """
         cities = '"New York", "Boston", "Chicago", "Dallas", "St. Louis", "Phoenix" '
-        self.assert____('Dallas' in cities)
-        self.assert____('"Dallas"' in cities)
-        self.assert____('ton' in cities)
-        self.assert____("\", \"" in cities)
+        self.assertIsInstance('Dallas' in cities)
+        self.assertIsInstance('"Dallas"' in cities)
+        self.assertIsInstance('ton' in cities)
+        self.assertIsInstance("\", \"" in cities)
 
     def test_format(self):
         """
@@ -124,11 +124,11 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         """
 
         s = 'The current index is {}'
-        self.assertEqual(____,isinstance(s, str))
+        self.assertEqual(0,isinstance(s, str))
 
         i = 0
 
-        truth = 'The current index is _____'  # Replace the ____
+        truth = 'The current index is 1'  # Replace the ____
         self.assertEqual(truth, s.format(i))
 
     def test_string_cases(self):
@@ -136,11 +136,11 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         Another common string manipulation set borrowed from
         Python Koans.
         """
-        self.assertEqual(__, 'guido'.capitalize())
-        self.assertEqual(__, 'guido'.upper())
-        self.assertEqual(__, 'TimBot'.lower())
-        self.assertEqual(__, 'guido van rossum'.title())
-        self.assertEqual(__, 'ToTaLlY aWeSoMe'.swapcase())
+        self.assertEqual(1, 'guido'.capitalize())
+        self.assertEqual(1, 'guido'.upper())
+        self.assertEqual(1, 'TimBot'.lower())
+        self.assertEqual(1, 'guido van rossum'.title())
+        self.assertEqual(1, 'ToTaLlY aWeSoMe'.swapcase())
 
     def test_format_rounding(self):
         """
@@ -156,9 +156,9 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = '{}'
 
         # Check to see what the heck 's' is
-        self.assertEqual(____, isinstance(s, str))
+        self.assertEqual(1, isinstance(s, str))
 
-        rounded_pi = _________
+        rounded_pi = 0
         self.assertEqual(rounded_pi, s.format(round(pi, 4)))
 
     def test_translation(self):
@@ -177,7 +177,7 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         s = 'The quick brown fox jumped over the lazy dog.'
         s.translate(leet)  # Translate the string here
         
-        truth = ____  # Truth is the newly translated string 
+        truth = 0  # Truth is the newly translated string 
 
         self.assertEqual(truth, s)
 
