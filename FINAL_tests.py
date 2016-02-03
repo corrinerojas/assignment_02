@@ -186,7 +186,10 @@ class TestAssignmentTwo_Strings(unittest.TestCase):
         Write your own test here demonstrating either string
         or None usage that has not been demonstrated above.
         """
-        self.assertTrue(True)  # You can either fix this line or remove it once the test is in.
+        
+        x = None or 3
+        
+        self.assertEqual(x, 3)  # You can either fix this line or remove it once the test is in.
 
     def tearDown(self):
         pass
