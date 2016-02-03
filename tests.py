@@ -10,7 +10,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
         Think about what 'is' does here.
         """
         truth = 1
-        self.assertEqual(truth, None = None)
+        self.assertEqual(truth, truth is 1)
 
     def test_none_is_unique(self):
         """
@@ -18,14 +18,14 @@ class TestAssignmentTwo_None(unittest.TestCase):
          what the tight hand side of the equalities evaluate to.
         """
         truth = 1
-        self.assertEqual(truth, None != 0)
+        self.assertEqual(truth, truth != 0)
         truth = 1 # This resets the value of truth
-        self.assertEqual(truth, None != False)
+        self.assertEqual(truth, truth = 1)
 
     def test_none_existence(self):
 
         x = 0
-        checker = None
+        checker = 'None'
         if checker:
             x = 1
         self.assertEqual(1,x)
@@ -40,7 +40,7 @@ class TestAssignmentTwo_None(unittest.TestCase):
             y = 1
         self.assertEqual(0, y)
 
-        self.assertTrue(x == None)  # Not PEP8 compliant, but commonly used.
+        self.assertTrue(x == 'None')  # Not PEP8 compliant, but commonly used.
 
         """
         The take away here is that truthiness is not the same as None
